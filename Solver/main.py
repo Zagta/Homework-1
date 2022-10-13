@@ -10,10 +10,10 @@ class QuadraticSolver:
     # Метод вычисления дискриминанта
     def _calculateDiscriminant(self, a: float, b: float, c: float) -> float:
         
-        return math.qrt(b) - 4 * a * c
+        return b**2 - 4 * a * c
 
     # Метод нахождения корней уравнения
-    def _calculateSquareRoots(self, D: float, a: float, b: float) -> float:
+    def _calculateSquareRoots(self, D: float, a: float, b: float) -> List[float]:
         sqrtFromD = math.sqrt(D)
         rootA = (-b + sqrtFromD) / (2 * a)
         rootB = (-b - sqrtFromD) / (2 * a)
