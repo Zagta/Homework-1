@@ -2,20 +2,20 @@ name: hw1
 on: [push, pull_request]
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - name: Setting up python
-      uses: actions/setup-python@v4
-      with: 
-        python-version: "3.9.12"
-    - name: Display Python version
-      run: python -c "import sys; print(sys.version)"
-    - name: Installing dependancies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Running test
-      run: |
-        pytest -s -v
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setting up python
+        uses: actions/setup-python@v4
+        with: 
+          python-version: "3.9.12"
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      - name: Installing dependancies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Running test
+        run: |
+          pytest -s -v
