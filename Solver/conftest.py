@@ -1,5 +1,5 @@
 import pytest
-from Solver.main import QuadraticSolver
+from main import QuadraticSolver
 
 @pytest.fixture(scope='module')
 def solver():
